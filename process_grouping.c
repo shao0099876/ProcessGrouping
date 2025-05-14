@@ -71,6 +71,7 @@ static void set_proc_family(struct proc_t* parent, struct proc_t* child)
     INIT_LIST_HEAD(&child->head);
     list_add(&(child->head), &(parent->child));
     child->father = parent;
+    child->groupid = parent->groupid;
     spin_unlock(&proc_lock);
 }
 
